@@ -10,6 +10,8 @@ SUMMARY OF LAB:
    
 4. I configured port security on both switches. I made sure to set the port security static on the management port to make sure only the admin's pc is allowed while the client devices were configured to be sticky with a maximum address of 4 and restrict violation. I tested this solution by replacing the admin connection with a rogue pc. The rogue pc was not able to ping the other devices since only the admin's pc is allowed and the max mac address is 1. But when I connect the rogue to the client ports, I was able to communicate with them since the max mac address is 4 which counts the rogue as the 2nd device.
 
-5. Lastly, I configured dhcp snooping by setting the connection between switches and MLS as trusted while leaving the end devices as unstrusted. I also configured ip arp inspection on all vlans. I made sure that the ports that are trusted are also trusted for ip arp inspection.
+5. I configured dhcp snooping by setting the connection between switches and MLS as trusted while leaving the end devices as unstrusted. I also configured ip arp inspection on all vlans. I made sure that the ports that are trusted are also trusted for ip arp inspection.
+
+6. Lastly, I enabled portfast and BPDU guard on the switches. 
 
 Thats what I did for this lab and Im thinking of continuing this lab by adding a DHCP server and configuring it, adding redundancy by implementing etherchannel, and configuring spanning tree protocol by making one of the switches as the root bridge. 
