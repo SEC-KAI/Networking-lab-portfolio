@@ -1,0 +1,5 @@
+show vlan brief
+show interfaces trunk
+show dtp
+show interfaces gigabitEthernet0/2 switchport
+

@@ -1,0 +1,10 @@
+PC1
+IPv4 address: 172.17.10.10
+Subnet mask: 255.255.255.0
+Default gateway: 172.17.10.1
+
+PC3
+IPv4 address: 172.17.30.10
+Subnet mask: 255.255.255.0
+Default gateway: 172.17.30.1
+

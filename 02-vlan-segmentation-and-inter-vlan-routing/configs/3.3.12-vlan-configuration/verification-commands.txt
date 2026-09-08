@@ -1,0 +1,3 @@
+show vlan brief
+show interfaces fastEthernet0/11 switchport
+

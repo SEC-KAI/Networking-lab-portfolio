@@ -1,0 +1,6 @@
+show vlan brief
+show interfaces trunk
+show ip interface brief
+show running-config interface gigabitEthernet0/0.10
+show running-config interface gigabitEthernet0/0.30
+

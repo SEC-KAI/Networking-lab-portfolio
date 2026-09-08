@@ -1,0 +1,36 @@
+enable
+configure terminal
+vlan 10
+ name Admin
+vlan 20
+ name Accounts
+vlan 30
+ name HR
+vlan 40
+ name Voice
+vlan 99
+ name Management
+vlan 100
+ name Native
+interface fastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+interface fastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+interface fastEthernet0/3
+ switchport mode access
+ switchport access vlan 30
+interface fastEthernet0/4
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 40
+interface vlan 99
+ ip address 192.168.99.254 255.255.255.0
+ no shutdown
+interface gigabitEthernet0/2
+ switchport mode dynamic auto
+ switchport trunk native vlan 100
+end
+write memory
+

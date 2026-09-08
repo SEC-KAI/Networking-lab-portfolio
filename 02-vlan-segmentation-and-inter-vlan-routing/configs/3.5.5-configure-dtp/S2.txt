@@ -1,0 +1,30 @@
+enable
+configure terminal
+vlan 10
+ name Red
+vlan 20
+ name Blue
+vlan 30
+ name Yellow
+vlan 99
+ name Management
+vlan 999
+ name Native
+interface range fastEthernet0/1 - 8
+ switchport mode access
+ switchport access vlan 10
+interface range fastEthernet0/9 - 16
+ switchport mode access
+ switchport access vlan 20
+interface range fastEthernet0/17 - 24
+ switchport mode access
+ switchport access vlan 30
+interface vlan 99
+ ip address 192.168.99.2 255.255.255.0
+ no shutdown
+interface gigabitEthernet0/1
+ switchport mode dynamic auto
+ switchport trunk native vlan 999
+end
+write memory
+

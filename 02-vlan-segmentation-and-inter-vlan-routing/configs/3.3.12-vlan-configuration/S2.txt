@@ -1,0 +1,24 @@
+enable
+configure terminal
+vlan 10
+ name Faculty/Staff
+vlan 20
+ name Students
+vlan 30
+ name Guest(Default)
+vlan 99
+ name Management&Native
+vlan 150
+ name VOICE
+interface fastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+interface fastEthernet0/18
+ switchport mode access
+ switchport access vlan 20
+interface fastEthernet0/6
+ switchport mode access
+ switchport access vlan 30
+end
+write memory
+

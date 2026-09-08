@@ -1,0 +1,7 @@
+PC1: 172.17.10.21 /24, gateway 172.17.10.1
+PC2: 172.17.20.22 /24, gateway 172.17.20.1
+PC3: 172.17.30.23 /24, gateway 172.17.30.1
+Server: 172.17.50.254 /24, gateway 172.17.50.1
+
+The upstream device on R1 G0/0 and the route toward 172.17.50.0/24 are already part of the activity. The PDF does not instruct you to add a route.
+

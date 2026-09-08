@@ -1,0 +1,15 @@
+enable
+configure terminal
+vlan 10
+vlan 30
+interface fastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+interface fastEthernet0/6
+ switchport mode access
+ switchport access vlan 30
+interface gigabitEthernet0/1
+ switchport mode trunk
+end
+write memory
+

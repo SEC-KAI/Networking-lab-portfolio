@@ -1,0 +1,40 @@
+enable
+configure terminal
+vlan 10
+ name Faculty/Staff
+vlan 20
+ name Students
+vlan 30
+ name Guest(Default)
+vlan 88
+ name Native
+vlan 99
+ name Management
+interface range fastEthernet0/11 - 17
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+interface range fastEthernet0/18 - 24
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+interface range fastEthernet0/6 - 10
+ switchport mode access
+ switchport access vlan 30
+ no shutdown
+interface vlan 99
+ ip address 172.17.99.10 255.255.255.0
+ no shutdown
+exit
+ip default-gateway 172.17.99.1
+interface gigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk native vlan 88
+ no shutdown
+interface range fastEthernet0/1 - 5
+ shutdown
+interface gigabitEthernet0/2
+ shutdown
+end
+write memory
+
