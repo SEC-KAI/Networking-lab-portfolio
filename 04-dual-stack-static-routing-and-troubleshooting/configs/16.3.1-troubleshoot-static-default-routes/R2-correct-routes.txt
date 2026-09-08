@@ -1,0 +1,10 @@
+enable
+configure terminal
+ipv6 unicast-routing
+ip route 172.31.1.0 255.255.255.128 172.31.1.194
+ip route 172.31.1.128 255.255.255.192 172.31.1.198
+ipv6 route 2001:DB8:1::/64 2001:DB8:2::194
+ipv6 route 2001:DB8:5::/64 2001:DB8:4::198
+end
+write memory
+

@@ -1,0 +1,2 @@
+No new ISP2 commands are requested by the PDF. ISP2 is already configured to support the backup path in the Packet Tracer activity.
+

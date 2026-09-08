@@ -1,0 +1,6 @@
+show ip route
+show ipv6 route
+show running-config | include ^ip route|^ipv6 route
+ping 198.0.0.10
+ping 2001:DB8:F:F::10
+

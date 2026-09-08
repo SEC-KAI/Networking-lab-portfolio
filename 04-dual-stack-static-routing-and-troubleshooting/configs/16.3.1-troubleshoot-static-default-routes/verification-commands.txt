@@ -1,0 +1,6 @@
+show ip interface brief
+show ipv6 interface brief
+show ip route
+show ipv6 route
+show running-config | include ^ip route|^ipv6 route
+

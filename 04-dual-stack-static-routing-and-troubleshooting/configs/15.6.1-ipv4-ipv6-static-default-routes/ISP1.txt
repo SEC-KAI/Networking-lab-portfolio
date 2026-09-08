@@ -1,0 +1,18 @@
+enable
+configure terminal
+
+ip route 192.168.10.16 255.255.255.240 10.10.10.2
+ip route 192.168.11.32 255.255.255.224 10.10.10.2
+
+ip route 192.168.10.16 255.255.255.240 gigabitEthernet0/0 5
+ip route 192.168.11.32 255.255.255.224 gigabitEthernet0/0 5
+
+ipv6 route 2001:DB8:1:10::/64 2001:DB8:A:1::2
+ipv6 route 2001:DB8:1:11::/64 2001:DB8:A:1::2
+
+ipv6 route 2001:DB8:1:10::/64 2001:DB8:F:F::2 5
+ipv6 route 2001:DB8:1:11::/64 2001:DB8:F:F::2 5
+
+end
+write memory
+
