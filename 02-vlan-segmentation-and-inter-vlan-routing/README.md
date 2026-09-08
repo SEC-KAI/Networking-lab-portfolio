@@ -56,5 +56,5 @@ Network segmentation, 802.1Q trunking, DTP behavior, native-VLAN consistency, vo
 - Configure Router-on-a-Stick Inter-VLAN Routing
 - Inter-VLAN Routing Challenge
 
-See [evidence/README.md](evidence/README.md) for supporting artifacts.
+See [evidence](evidence) for supporting artifacts.
 
