@@ -1,0 +1,4 @@
+S2#show running-config
+hostname S2
+!
+end

@@ -1,0 +1,4 @@
+S3#show running-config
+hostname S3
+!
+end

@@ -1,0 +1,26 @@
+SWB#show running-config
+hostname SWB
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet0/2
+ switchport mode trunk
+ channel-group 1 mode desirable
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface FastEthernet0/23
+ switchport mode trunk
+ channel-group 3 mode passive
+!
+interface FastEthernet0/24
+ switchport mode trunk
+ channel-group 3 mode passive
+!
+interface Port-channel3
+ switchport mode trunk
+!
+end

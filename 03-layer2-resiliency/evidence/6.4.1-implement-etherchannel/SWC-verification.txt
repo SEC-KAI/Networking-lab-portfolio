@@ -1,0 +1,37 @@
+SWC#show etherchannel summary
+Group  Port-channel  Protocol  Members (P = conditionally bundled)
+2      Po2(SU)       LACP     FastEthernet0/21(P), FastEthernet0/22(P)
+3      Po3(SU)       LACP     FastEthernet0/23(P), FastEthernet0/24(P)
+
+SWC#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+FastEthernet0/21         trunk        802.1q         trunking*        1
+FastEthernet0/22         trunk        802.1q         trunking*        1
+Port-channel2            trunk        802.1q         trunking*        1
+FastEthernet0/23         trunk        802.1q         trunking*        1
+FastEthernet0/24         trunk        802.1q         trunking*        1
+Port-channel3            trunk        802.1q         trunking*        1
+
+SWC#show interfaces port-channel 1
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown
+FastEthernet0/23: switchport mode trunk, channel-group 3 mode active, no shutdown
+FastEthernet0/24: switchport mode trunk, channel-group 3 mode active, no shutdown
+Port-channel3: switchport mode trunk, no shutdown
+
+SWC#show interfaces port-channel 2
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown
+FastEthernet0/23: switchport mode trunk, channel-group 3 mode active, no shutdown
+FastEthernet0/24: switchport mode trunk, channel-group 3 mode active, no shutdown
+Port-channel3: switchport mode trunk, no shutdown
+
+SWC#show interfaces port-channel 3
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown
+FastEthernet0/23: switchport mode trunk, channel-group 3 mode active, no shutdown
+FastEthernet0/24: switchport mode trunk, channel-group 3 mode active, no shutdown
+Port-channel3: switchport mode trunk, no shutdown

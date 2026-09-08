@@ -1,0 +1,37 @@
+SWA#show etherchannel summary
+Group  Port-channel  Protocol  Members (P = conditionally bundled)
+1      Po1(SU)       PAgP     GigabitEthernet0/1(P), GigabitEthernet0/2(P)
+2      Po2(SU)       LACP     FastEthernet0/21(P), FastEthernet0/22(P)
+
+SWA#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/1       trunk        802.1q         trunking*        1
+GigabitEthernet0/2       trunk        802.1q         trunking*        1
+Port-channel1            trunk        802.1q         trunking*        1
+FastEthernet0/21         trunk        802.1q         trunking*        1
+FastEthernet0/22         trunk        802.1q         trunking*        1
+Port-channel2            trunk        802.1q         trunking*        1
+
+SWA#show interfaces port-channel 1
+GigabitEthernet0/1: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+GigabitEthernet0/2: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+Port-channel1: switchport mode trunk, no shutdown
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown
+
+SWA#show interfaces port-channel 2
+GigabitEthernet0/1: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+GigabitEthernet0/2: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+Port-channel1: switchport mode trunk, no shutdown
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown
+
+SWA#show interfaces port-channel 3
+GigabitEthernet0/1: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+GigabitEthernet0/2: switchport mode trunk, channel-group 1 mode desirable, no shutdown
+Port-channel1: switchport mode trunk, no shutdown
+FastEthernet0/21: switchport mode trunk, channel-group 2 mode active, no shutdown
+FastEthernet0/22: switchport mode trunk, channel-group 2 mode active, no shutdown
+Port-channel2: switchport mode trunk, no shutdown

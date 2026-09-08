@@ -1,0 +1,4 @@
+S3#show spanning-tree vlan 1
+
+S3#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN

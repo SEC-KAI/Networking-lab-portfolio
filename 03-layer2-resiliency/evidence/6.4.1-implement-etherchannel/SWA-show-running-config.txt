@@ -1,0 +1,26 @@
+SWA#show running-config
+hostname SWA
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+ channel-group 1 mode desirable
+!
+interface GigabitEthernet0/2
+ switchport mode trunk
+ channel-group 1 mode desirable
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface FastEthernet0/21
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface FastEthernet0/22
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface Port-channel2
+ switchport mode trunk
+!
+end

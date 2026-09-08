@@ -1,0 +1,26 @@
+SWC#show running-config
+hostname SWC
+!
+interface FastEthernet0/21
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface FastEthernet0/22
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface Port-channel2
+ switchport mode trunk
+!
+interface FastEthernet0/23
+ switchport mode trunk
+ channel-group 3 mode active
+!
+interface FastEthernet0/24
+ switchport mode trunk
+ channel-group 3 mode active
+!
+interface Port-channel3
+ switchport mode trunk
+!
+end
