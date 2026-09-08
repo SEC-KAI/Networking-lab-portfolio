@@ -1,0 +1,4 @@
+enable
+clock set 12:00:00 8 Sep 2026
+
+Change the time and date if your instructor expects the current local value.

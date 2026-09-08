@@ -1,0 +1,26 @@
+enable
+configure terminal
+hostname RTA
+enable secret Ciscoenpa55
+service password-encryption
+banner motd #Authorized access only.#
+line console 0
+ password Ciscolinepa55
+ login
+exit
+line vty 0 4
+ password Ciscolinepa55
+ login
+exit
+interface gigabitEthernet0/0
+ description Connection to SW1
+ ip address 10.10.10.1 255.255.255.0
+ no shutdown
+exit
+interface gigabitEthernet0/1
+ description Connection to SW2
+ ip address 10.10.20.1 255.255.255.0
+ no shutdown
+end
+write memory
+

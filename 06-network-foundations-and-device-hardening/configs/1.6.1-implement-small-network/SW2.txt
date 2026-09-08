@@ -1,0 +1,22 @@
+enable
+configure terminal
+hostname SW2
+enable secret Ciscoenpa55
+service password-encryption
+banner motd #Authorized access only.#
+line console 0
+ password Ciscolinepa55
+ login
+exit
+line vty 0 15
+ password Ciscolinepa55
+ login
+exit
+interface vlan 1
+ ip address 10.10.20.2 255.255.255.0
+ no shutdown
+exit
+ip default-gateway 10.10.20.1
+end
+write memory
+

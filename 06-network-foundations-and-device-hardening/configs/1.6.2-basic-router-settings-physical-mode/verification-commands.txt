@@ -1,0 +1,10 @@
+show version
+show version | include register
+show startup-config
+show running-config | section vty
+show ip route
+show ipv6 route
+show ip interface brief
+show ipv6 interface brief
+show interfaces
+

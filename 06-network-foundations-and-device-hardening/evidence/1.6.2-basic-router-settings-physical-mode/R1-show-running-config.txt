@@ -1,0 +1,42 @@
+R1#show running-config
+hostname R1
+ip domain-name ccna-lab.com
+service password-encryption
+security passwords min-length 12
+username SSHadmin secret <DEVICE-HASH-NOT-GENERATED>
+enable secret <DEVICE-HASH-NOT-GENERATED>
+banner motd #Unauthorized access is prohibited.#
+ipv6 unicast-routing
+login block-for 120 attempts 3 within 60
+ip ssh version 2
+!
+line console 0
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ exec-timeout 4 0
+ login
+!
+line vty 0 4
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ exec-timeout 4 0
+ transport input ssh
+ login local
+!
+interface GigabitEthernet0/0/0
+ description Connection to Server LAN
+ ip address 192.168.0.1 255.255.255.0
+ ipv6 address 2001:DB8:ACAD::1/64
+ ipv6 address FE80::1 link-local
+!
+interface GigabitEthernet0/0/1
+ description Connection to PC-A LAN
+ ip address 192.168.1.1 255.255.255.0
+ ipv6 address 2001:DB8:ACAD:1::1/64
+ ipv6 address FE80::1 link-local
+!
+interface Loopback0
+ description Management loopback
+ ip address 10.0.0.1 255.255.255.0
+ ipv6 address 2001:DB8:ACAD:2::1/64
+ ipv6 address FE80::1 link-local
+!
+end

@@ -1,0 +1,43 @@
+SW1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+Vlan1                    10.10.10.2 255.255.255.0           up requested or inherited
+
+SW1#show running-config
+hostname SW1
+enable secret <DEVICE-HASH-NOT-GENERATED>
+service password-encryption
+banner motd #Authorized access only.#
+ip default-gateway 10.10.10.1
+!
+line console 0
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+line vty 0 15
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+interface Vlan1
+ ip address 10.10.10.2 255.255.255.0
+!
+end
+
+SW1#show startup-config
+hostname SW1
+enable secret <DEVICE-HASH-NOT-GENERATED>
+service password-encryption
+banner motd #Authorized access only.#
+ip default-gateway 10.10.10.1
+!
+line console 0
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+line vty 0 15
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+interface Vlan1
+ ip address 10.10.10.2 255.255.255.0
+!
+end

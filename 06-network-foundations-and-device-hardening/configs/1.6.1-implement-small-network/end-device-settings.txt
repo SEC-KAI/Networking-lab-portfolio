@@ -1,0 +1,12 @@
+The PDF permits any available host address in each LAN. This working plan uses:
+
+PC-1
+IPv4 address: 10.10.10.10
+Subnet mask: 255.255.255.0
+Default gateway: 10.10.10.1
+
+PC-2
+IPv4 address: 10.10.20.10
+Subnet mask: 255.255.255.0
+Default gateway: 10.10.20.1
+

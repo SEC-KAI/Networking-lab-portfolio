@@ -1,0 +1,23 @@
+RTA#show running-config
+hostname RTA
+enable secret <DEVICE-HASH-NOT-GENERATED>
+service password-encryption
+banner motd #Authorized access only.#
+!
+line console 0
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+line vty 0 4
+ password <DEVICE-ENCODED-VALUE-NOT-GENERATED>
+ login
+!
+interface GigabitEthernet0/0
+ description Connection to SW1
+ ip address 10.10.10.1 255.255.255.0
+!
+interface GigabitEthernet0/1
+ description Connection to SW2
+ ip address 10.10.20.1 255.255.255.0
+!
+end

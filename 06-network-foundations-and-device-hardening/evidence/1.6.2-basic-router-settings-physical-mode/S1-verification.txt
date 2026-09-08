@@ -1,0 +1,23 @@
+S1#show version
+
+S1#show version | include register
+
+S1#show startup-config
+hostname S1
+!
+end
+
+S1#show running-config | section vty
+
+S1#show ip route
+
+S1#show ipv6 route
+
+S1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+
+S1#show ipv6 interface brief
+Interface                Configured address                 Administrative expectation
+
+S1#show interfaces
+
