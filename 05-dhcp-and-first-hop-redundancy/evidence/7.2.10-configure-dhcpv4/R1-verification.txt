@@ -1,0 +1,10 @@
+R1#show ip dhcp pool
+
+R1#show ip dhcp binding
+
+R1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       192.168.10.1 255.255.255.0         up requested or inherited
+Serial0/0/0              10.1.1.1 255.255.255.252           up requested or inherited
+
+R1#show running-config | section dhcp

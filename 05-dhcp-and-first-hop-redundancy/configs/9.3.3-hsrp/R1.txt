@@ -1,0 +1,10 @@
+enable
+configure terminal
+interface gigabitEthernet0/1
+ standby version 2
+ standby 1 ip 192.168.1.254
+ standby 1 priority 150
+ standby 1 preempt
+end
+write memory
+

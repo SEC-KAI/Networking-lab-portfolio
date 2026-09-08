@@ -1,0 +1,9 @@
+After HSRP is configured, change the LAN devices to use the virtual gateway:
+
+PC-A default gateway: 192.168.1.254
+PC-B default gateway: 192.168.1.254
+S1 default gateway: 192.168.1.254
+S3 default gateway: 192.168.1.254
+
+The PDF refers to PC-C in one instruction, but its addressing table lists PC-B. Use the LAN host shown in your Packet Tracer file.
+

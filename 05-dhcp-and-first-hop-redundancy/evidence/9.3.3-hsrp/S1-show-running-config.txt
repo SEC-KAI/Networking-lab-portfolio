@@ -1,0 +1,8 @@
+S1#show running-config
+hostname S1
+ip default-gateway 192.168.1.254
+!
+interface Vlan1
+ ip address 192.168.1.11 255.255.255.0
+!
+end

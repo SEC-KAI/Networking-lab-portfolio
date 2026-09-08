@@ -1,0 +1,17 @@
+R1#show running-config
+hostname R1
+!
+interface GigabitEthernet0/0
+ ip address 10.1.1.1 255.255.255.252
+!
+interface GigabitEthernet0/1
+ ip address 192.168.1.1 255.255.255.0
+ standby version 2
+ standby 1 ip 192.168.1.254
+ standby 1 priority 150
+ standby 1 preempt
+!
+interface GigabitEthernet0/2
+ ip address 10.1.1.9 255.255.255.252
+!
+end

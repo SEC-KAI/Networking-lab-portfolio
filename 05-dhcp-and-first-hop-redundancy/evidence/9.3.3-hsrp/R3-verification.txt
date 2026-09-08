@@ -1,0 +1,11 @@
+R3#show standby
+Interface Grp Pri P State    Active        Standby       Virtual IP
+Gi0/0     1   100   Standby  192.168.1.1   local         192.168.1.254
+HSRP version: 2; group-derived virtual MAC: 0000.0c9f.f001
+
+R3#show standby brief
+Interface Grp Pri P State    Active        Standby       Virtual IP
+Gi0/0     1   100   Standby  192.168.1.1   local         192.168.1.254
+HSRP version: 2; group-derived virtual MAC: 0000.0c9f.f001
+
+R3#show arp

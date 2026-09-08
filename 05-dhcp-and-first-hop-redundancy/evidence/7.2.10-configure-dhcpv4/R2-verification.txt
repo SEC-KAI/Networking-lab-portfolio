@@ -1,0 +1,33 @@
+R2#show ip dhcp pool
+ip dhcp pool R1-LAN
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 192.168.20.254
+ Leases and utilization: <UNKNOWN>
+ip dhcp pool R3-LAN
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 192.168.20.254
+ Leases and utilization: <UNKNOWN>
+
+R2#show ip dhcp binding
+
+R2#show ip interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       192.168.20.1 255.255.255.0         up requested or inherited
+Serial0/0/0              10.1.1.2 255.255.255.252           up requested or inherited
+Serial0/0/1              10.2.2.2 255.255.255.252           up requested or inherited
+GigabitEthernet0/1       dhcp                               up requested or inherited
+
+R2#show running-config | section dhcp
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.30.1 192.168.30.10
+ip dhcp pool R1-LAN
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 192.168.20.254
+ip dhcp pool R3-LAN
+ network 192.168.30.0 255.255.255.0
+ default-router 192.168.30.1
+ dns-server 192.168.20.254
+ ip address dhcp

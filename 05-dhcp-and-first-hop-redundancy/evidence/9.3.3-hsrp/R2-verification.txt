@@ -1,0 +1,5 @@
+R2#show standby
+
+R2#show standby brief
+
+R2#show arp

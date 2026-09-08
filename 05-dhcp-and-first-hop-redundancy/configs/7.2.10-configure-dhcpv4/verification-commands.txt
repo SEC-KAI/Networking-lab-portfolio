@@ -1,0 +1,5 @@
+show ip dhcp pool
+show ip dhcp binding
+show ip interface brief
+show running-config | section dhcp
+

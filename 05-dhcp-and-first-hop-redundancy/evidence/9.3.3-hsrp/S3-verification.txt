@@ -1,0 +1,5 @@
+S3#show standby
+
+S3#show standby brief
+
+S3#show arp

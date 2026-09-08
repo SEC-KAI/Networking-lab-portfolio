@@ -1,0 +1,4 @@
+show standby
+show standby brief
+show arp
+
