@@ -1,0 +1,6 @@
+show etherchannel summary
+show interfaces trunk
+show interfaces port-channel 1
+show interfaces port-channel 2
+show interfaces port-channel 3
+

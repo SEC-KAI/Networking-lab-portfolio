@@ -1,0 +1,3 @@
+show spanning-tree vlan 1
+show interfaces trunk
+

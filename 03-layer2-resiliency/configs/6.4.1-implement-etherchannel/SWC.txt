@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname SWC
+interface range fastEthernet0/21 - 22
+ switchport mode trunk
+ channel-group 2 mode active
+ no shutdown
+exit
+interface port-channel2
+ switchport mode trunk
+ no shutdown
+exit
+interface range fastEthernet0/23 - 24
+ switchport mode trunk
+ channel-group 3 mode active
+ no shutdown
+exit
+interface port-channel3
+ switchport mode trunk
+ no shutdown
+end
+write memory
+

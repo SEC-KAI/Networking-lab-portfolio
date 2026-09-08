@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname SWA
+interface range gigabitEthernet0/1 - 2
+ switchport mode trunk
+ channel-group 1 mode desirable
+ no shutdown
+exit
+interface port-channel1
+ switchport mode trunk
+ no shutdown
+exit
+interface range fastEthernet0/21 - 22
+ switchport mode trunk
+ channel-group 2 mode active
+ no shutdown
+exit
+interface port-channel2
+ switchport mode trunk
+ no shutdown
+end
+write memory
+

@@ -1,0 +1,8 @@
+This is an observation lab. The switching topology and spanning-tree configuration are already present in the Packet Tracer activity.
+
+Do not paste a replacement configuration. Use the following privileged EXEC command on S1, S2, and S3:
+
+show spanning-tree vlan 1
+
+After recording the initial port roles and states, remove the S1-S2 cable as instructed. Re-run the command on S3 until G0/2 moves through the STP states and reaches forwarding. Then verify PC1-to-PC2 connectivity.
+
