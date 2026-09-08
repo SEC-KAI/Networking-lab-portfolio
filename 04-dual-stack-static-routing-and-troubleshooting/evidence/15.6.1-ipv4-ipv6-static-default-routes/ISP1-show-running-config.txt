@@ -1,0 +1,20 @@
+ISP1#show running-config
+hostname ISP1
+ip route 192.168.10.16 255.255.255.240 10.10.10.2
+ip route 192.168.11.32 255.255.255.224 10.10.10.2
+ip route 192.168.10.16 255.255.255.240 gigabitEthernet0/0 5
+ip route 192.168.11.32 255.255.255.224 gigabitEthernet0/0 5
+ipv6 route 2001:DB8:1:10::/64 2001:DB8:A:1::2
+ipv6 route 2001:DB8:1:11::/64 2001:DB8:A:1::2
+ipv6 route 2001:DB8:1:10::/64 2001:DB8:F:F::2 5
+ipv6 route 2001:DB8:1:11::/64 2001:DB8:F:F::2 5
+!
+interface Serial0/0/0
+ ip address 10.10.10.1 255.255.255.252
+ ipv6 address 2001:db8:a:1::1/64
+!
+interface GigabitEthernet0/0
+ ip address 198.0.0.1 255.255.255.0
+ ipv6 address 2001:db8:f:f::1/64
+!
+end

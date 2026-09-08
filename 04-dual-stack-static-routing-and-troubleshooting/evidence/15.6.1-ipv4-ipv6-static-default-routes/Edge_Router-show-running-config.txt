@@ -1,0 +1,29 @@
+Edge_Router#show running-config
+hostname Edge_Router
+ipv6 unicast-routing
+ip route 0.0.0.0 0.0.0.0 serial0/0/0
+ip route 0.0.0.0 0.0.0.0 serial0/0/1 5
+ipv6 route ::/0 2001:DB8:A:1::1
+ipv6 route ::/0 2001:DB8:A:2::1 5
+ip route 198.0.0.10 255.255.255.255 serial0/0/0
+ip route 198.0.0.10 255.255.255.255 serial0/0/1 5
+ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:1::1
+ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:2::1 5
+!
+interface Serial0/0/0
+ ip address 10.10.10.2 255.255.255.252
+ ipv6 address 2001:db8:a:1::2/64
+!
+interface Serial0/0/1
+ ip address 10.10.10.6 255.255.255.252
+ ipv6 address 2001:db8:a:2::2/64
+!
+interface GigabitEthernet0/0
+ ip address 192.168.10.17 255.255.255.240
+ ipv6 address 2001:db8:1:10::1/64
+!
+interface GigabitEthernet0/1
+ ip address 192.168.11.33 255.255.255.224
+ ipv6 address 2001:db8:1:11::1/64
+!
+end

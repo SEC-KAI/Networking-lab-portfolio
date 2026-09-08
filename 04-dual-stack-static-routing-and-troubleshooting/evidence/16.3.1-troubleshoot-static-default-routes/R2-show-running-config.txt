@@ -1,0 +1,21 @@
+R2#show running-config
+hostname R2
+ipv6 unicast-routing
+ip route 172.31.1.0 255.255.255.128 172.31.1.194
+ip route 172.31.1.128 255.255.255.192 172.31.1.198
+ipv6 route 2001:DB8:1::/64 2001:DB8:2::194
+ipv6 route 2001:DB8:5::/64 2001:DB8:4::198
+!
+interface GigabitEthernet0/0
+ ip address 172.31.0.1 255.255.255.0
+ ipv6 address 2001:db8:3::1/64
+!
+interface Serial0/0/0
+ ip address 172.31.1.193 255.255.255.252
+ ipv6 address 2001:db8:2::193/64
+!
+interface Serial0/0/1
+ ip address 172.31.1.197 255.255.255.252
+ ipv6 address 2001:db8:4::197/64
+!
+end

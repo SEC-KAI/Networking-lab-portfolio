@@ -1,0 +1,23 @@
+R3#show ip interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       172.31.1.129 255.255.255.192       up requested or inherited
+Serial0/0/1              172.31.1.198 255.255.255.252       up requested or inherited
+
+R3#show ipv6 interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       2001:db8:5::1/64                   up requested or inherited
+Serial0/0/1              2001:db8:4::198/64                 up requested or inherited
+
+R3#show ip route
+C candidate: 172.31.1.128/26 on GigabitEthernet0/0
+C candidate: 172.31.1.196/30 on Serial0/0/1
+S candidate: ip route 0.0.0.0 0.0.0.0 172.31.1.197 [normally AD 1]
+
+R3#show ipv6 route
+C candidate: 2001:db8:5::/64 on GigabitEthernet0/0
+C candidate: 2001:db8:4::/64 on Serial0/0/1
+S candidate: ipv6 route ::/0 2001:DB8:4::197 [normally AD 1]
+
+R3#show running-config | include ^ip route|^ipv6 route
+ip route 0.0.0.0 0.0.0.0 172.31.1.197
+ipv6 route ::/0 2001:DB8:4::197

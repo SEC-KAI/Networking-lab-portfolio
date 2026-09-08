@@ -1,0 +1,13 @@
+ISP2#show ip route
+C candidate: 10.10.10.4/30 on Serial0/0/1
+C candidate: 198.0.0.0/24 on GigabitEthernet0/0
+
+ISP2#show ipv6 route
+C candidate: 2001:db8:a:2::/64 on Serial0/0/1
+C candidate: 2001:db8:f:f::/64 on GigabitEthernet0/0
+
+ISP2#show running-config | include ^ip route|^ipv6 route
+
+ISP2#ping 198.0.0.10
+
+ISP2#ping 2001:DB8:F:F::10

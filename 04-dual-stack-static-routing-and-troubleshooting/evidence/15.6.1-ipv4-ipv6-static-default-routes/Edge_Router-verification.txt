@@ -1,0 +1,33 @@
+Edge_Router#show ip route
+C candidate: 10.10.10.0/30 on Serial0/0/0
+C candidate: 10.10.10.4/30 on Serial0/0/1
+C candidate: 192.168.10.16/28 on GigabitEthernet0/0
+C candidate: 192.168.11.32/27 on GigabitEthernet0/1
+S candidate: ip route 0.0.0.0 0.0.0.0 serial0/0/0 [normally AD 1]
+S candidate: ip route 0.0.0.0 0.0.0.0 serial0/0/1 5 [AD 5 backup; not installed while eligible AD 1 route for same prefix exists]
+S candidate: ip route 198.0.0.10 255.255.255.255 serial0/0/0 [normally AD 1]
+S candidate: ip route 198.0.0.10 255.255.255.255 serial0/0/1 5 [AD 5 backup; not installed while eligible AD 1 route for same prefix exists]
+
+Edge_Router#show ipv6 route
+C candidate: 2001:db8:a:1::/64 on Serial0/0/0
+C candidate: 2001:db8:a:2::/64 on Serial0/0/1
+C candidate: 2001:db8:1:10::/64 on GigabitEthernet0/0
+C candidate: 2001:db8:1:11::/64 on GigabitEthernet0/1
+S candidate: ipv6 route ::/0 2001:DB8:A:1::1 [normally AD 1]
+S candidate: ipv6 route ::/0 2001:DB8:A:2::1 5 [AD 5 backup; not installed while eligible AD 1 route for same prefix exists]
+S candidate: ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:1::1 [normally AD 1]
+S candidate: ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:2::1 5 [AD 5 backup; not installed while eligible AD 1 route for same prefix exists]
+
+Edge_Router#show running-config | include ^ip route|^ipv6 route
+ip route 0.0.0.0 0.0.0.0 serial0/0/0
+ip route 0.0.0.0 0.0.0.0 serial0/0/1 5
+ipv6 route ::/0 2001:DB8:A:1::1
+ipv6 route ::/0 2001:DB8:A:2::1 5
+ip route 198.0.0.10 255.255.255.255 serial0/0/0
+ip route 198.0.0.10 255.255.255.255 serial0/0/1 5
+ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:1::1
+ipv6 route 2001:DB8:F:F::10/128 2001:DB8:A:2::1 5
+
+Edge_Router#ping 198.0.0.10
+
+Edge_Router#ping 2001:DB8:F:F::10

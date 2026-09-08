@@ -1,0 +1,15 @@
+R3#show running-config
+hostname R3
+ipv6 unicast-routing
+ip route 0.0.0.0 0.0.0.0 172.31.1.197
+ipv6 route ::/0 2001:DB8:4::197
+!
+interface GigabitEthernet0/0
+ ip address 172.31.1.129 255.255.255.192
+ ipv6 address 2001:db8:5::1/64
+!
+interface Serial0/0/1
+ ip address 172.31.1.198 255.255.255.252
+ ipv6 address 2001:db8:4::198/64
+!
+end
