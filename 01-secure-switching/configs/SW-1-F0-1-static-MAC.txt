@@ -1,0 +1,9 @@
+! Run this first from privileged EXEC mode to discover the PC MAC:
+show mac address-table interface fastEthernet0/1
+
+! Then replace xxxx.xxxx.xxxx below with that learned PC MAC and paste:
+configure terminal
+interface fastEthernet0/1
+ switchport port-security mac-address xxxx.xxxx.xxxx
+end
+write memory

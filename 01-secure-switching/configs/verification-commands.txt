@@ -1,0 +1,10 @@
+show interfaces trunk
+show port-security
+show port-security interface fastEthernet0/1
+show port-security interface fastEthernet0/2
+show port-security interface fastEthernet0/10
+show port-security interface fastEthernet0/24
+show ip dhcp snooping
+show interfaces status
+show spanning-tree summary
+
