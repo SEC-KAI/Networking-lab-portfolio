@@ -1,0 +1,49 @@
+S1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Faculty/Staff                active   FastEthernet0/11, FastEthernet0/12, FastEthernet0/13, FastEthernet0/14, FastEthernet0/15, FastEthernet0/16, FastEthernet0/17
+20    Students                     active   FastEthernet0/18, FastEthernet0/19, FastEthernet0/20, FastEthernet0/21, FastEthernet0/22, FastEthernet0/23, FastEthernet0/24
+30    Guest(Default)               active   FastEthernet0/6, FastEthernet0/7, FastEthernet0/8, FastEthernet0/9, FastEthernet0/10
+88    Native                       active   
+99    Management                   active   
+
+S1#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/1       trunk        802.1q         trunking*        88
+
+S1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+FastEthernet0/11         unassigned                         up requested or inherited
+FastEthernet0/12         unassigned                         up requested or inherited
+FastEthernet0/13         unassigned                         up requested or inherited
+FastEthernet0/14         unassigned                         up requested or inherited
+FastEthernet0/15         unassigned                         up requested or inherited
+FastEthernet0/16         unassigned                         up requested or inherited
+FastEthernet0/17         unassigned                         up requested or inherited
+FastEthernet0/18         unassigned                         up requested or inherited
+FastEthernet0/19         unassigned                         up requested or inherited
+FastEthernet0/20         unassigned                         up requested or inherited
+FastEthernet0/21         unassigned                         up requested or inherited
+FastEthernet0/22         unassigned                         up requested or inherited
+FastEthernet0/23         unassigned                         up requested or inherited
+FastEthernet0/24         unassigned                         up requested or inherited
+FastEthernet0/6          unassigned                         up requested or inherited
+FastEthernet0/7          unassigned                         up requested or inherited
+FastEthernet0/8          unassigned                         up requested or inherited
+FastEthernet0/9          unassigned                         up requested or inherited
+FastEthernet0/10         unassigned                         up requested or inherited
+Vlan99                   172.17.99.10 255.255.255.0         up requested or inherited
+GigabitEthernet0/1       unassigned                         up requested or inherited
+FastEthernet0/1          unassigned                         shutdown
+FastEthernet0/2          unassigned                         shutdown
+FastEthernet0/3          unassigned                         shutdown
+FastEthernet0/4          unassigned                         shutdown
+FastEthernet0/5          unassigned                         shutdown
+GigabitEthernet0/2       unassigned                         shutdown
+
+S1#show running-config interface gigabitEthernet0/1
+interface GigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk native vlan 88
+
+S1#show ip route
+C candidate: 172.17.99.0/24 on Vlan99

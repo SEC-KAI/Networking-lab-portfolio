@@ -1,0 +1,10 @@
+S1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Faculty/Staff                active   
+20    Students                     active   
+30    Guest(Default)               active   
+99    Management&Native            active   
+150   VOICE                        active   
+
+S1#show interfaces fastEthernet0/11 switchport
+

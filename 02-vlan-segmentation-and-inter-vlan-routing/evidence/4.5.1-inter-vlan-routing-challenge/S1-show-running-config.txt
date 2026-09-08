@@ -1,0 +1,121 @@
+S1#show running-config
+hostname S1
+ip default-gateway 172.17.99.1
+!
+vlan 10
+ name Faculty/Staff
+!
+vlan 20
+ name Students
+!
+vlan 30
+ name Guest(Default)
+!
+vlan 88
+ name Native
+!
+vlan 99
+ name Management
+!
+interface FastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/12
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/13
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/14
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/15
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/16
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/17
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/18
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/19
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/20
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/21
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/22
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/23
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/24
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/6
+ switchport mode access
+ switchport access vlan 30
+!
+interface FastEthernet0/7
+ switchport mode access
+ switchport access vlan 30
+!
+interface FastEthernet0/8
+ switchport mode access
+ switchport access vlan 30
+!
+interface FastEthernet0/9
+ switchport mode access
+ switchport access vlan 30
+!
+interface FastEthernet0/10
+ switchport mode access
+ switchport access vlan 30
+!
+interface Vlan99
+ ip address 172.17.99.10 255.255.255.0
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+ switchport trunk native vlan 88
+!
+interface FastEthernet0/1
+ shutdown
+!
+interface FastEthernet0/2
+ shutdown
+!
+interface FastEthernet0/3
+ shutdown
+!
+interface FastEthernet0/4
+ shutdown
+!
+interface FastEthernet0/5
+ shutdown
+!
+interface GigabitEthernet0/2
+ shutdown
+!
+end

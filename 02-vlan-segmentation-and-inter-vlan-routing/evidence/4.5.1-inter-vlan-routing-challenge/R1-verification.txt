@@ -1,0 +1,27 @@
+R1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+
+R1#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+
+R1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       172.17.25.2 255.255.255.252        up requested or inherited
+GigabitEthernet0/1       unassigned                         up requested or inherited
+GigabitEthernet0/1.10    172.17.10.1 255.255.255.0          up requested or inherited
+GigabitEthernet0/1.20    172.17.20.1 255.255.255.0          up requested or inherited
+GigabitEthernet0/1.30    172.17.30.1 255.255.255.0          up requested or inherited
+GigabitEthernet0/1.88    172.17.88.1 255.255.255.0          up requested or inherited
+GigabitEthernet0/1.99    172.17.99.1 255.255.255.0          up requested or inherited
+
+R1#show running-config interface gigabitEthernet0/1
+interface GigabitEthernet0/1
+
+
+R1#show ip route
+C candidate: 172.17.25.0/30 on GigabitEthernet0/0
+C candidate: 172.17.10.0/24 on GigabitEthernet0/1.10
+C candidate: 172.17.20.0/24 on GigabitEthernet0/1.20
+C candidate: 172.17.30.0/24 on GigabitEthernet0/1.30
+C candidate: 172.17.88.0/24 on GigabitEthernet0/1.88
+C candidate: 172.17.99.0/24 on GigabitEthernet0/1.99

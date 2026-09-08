@@ -1,0 +1,22 @@
+S1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    VLAN0010                     active   FastEthernet0/11
+30    VLAN0030                     active   FastEthernet0/6
+
+S1#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/1       trunk        802.1q         trunking*        1
+
+S1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+FastEthernet0/11         unassigned                         up requested or inherited
+FastEthernet0/6          unassigned                         up requested or inherited
+GigabitEthernet0/1       unassigned                         up requested or inherited
+
+S1#show running-config interface gigabitEthernet0/0.10
+interface GigabitEthernet0/0.10
+
+
+S1#show running-config interface gigabitEthernet0/0.30
+interface GigabitEthernet0/0.30
+

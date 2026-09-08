@@ -1,0 +1,39 @@
+SWC#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Admin                        active   FastEthernet0/1, FastEthernet0/4
+20    Accounts                     active   FastEthernet0/2
+30    HR                           active   FastEthernet0/3
+40    Voice                        active   FastEthernet0/4
+99    Management                   active   
+100   Native                       active   
+
+SWC#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/2       dynamic auto 802.1q         trunking*        100
+
+SWC#show interfaces switchport
+FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+FastEthernet0/3
+ switchport mode access
+ switchport access vlan 30
+FastEthernet0/4
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 40
+GigabitEthernet0/2
+ switchport mode dynamic auto
+ switchport trunk native vlan 100
+
+SWC#show ip interface brief
+Interface                Configured address                 Administrative expectation
+FastEthernet0/1          unassigned                         up requested or inherited
+FastEthernet0/2          unassigned                         up requested or inherited
+FastEthernet0/3          unassigned                         up requested or inherited
+FastEthernet0/4          unassigned                         up requested or inherited
+Vlan99                   192.168.99.254 255.255.255.0       up requested or inherited
+GigabitEthernet0/2       unassigned                         up requested or inherited

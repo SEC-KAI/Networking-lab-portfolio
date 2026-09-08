@@ -1,0 +1,28 @@
+SWA#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Admin                        active   
+20    Accounts                     active   
+30    HR                           active   
+40    Voice                        active   
+99    Management                   active   
+100   Native                       active   
+
+SWA#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/1       trunk        802.1q         trunking*        100
+GigabitEthernet0/2       dynamic desirable 802.1q         trunking*        100
+
+SWA#show interfaces switchport
+GigabitEthernet0/1
+ switchport mode trunk
+ switchport nonegotiate
+ switchport trunk native vlan 100
+GigabitEthernet0/2
+ switchport mode dynamic desirable
+ switchport trunk native vlan 100
+
+SWA#show ip interface brief
+Interface                Configured address                 Administrative expectation
+Vlan99                   192.168.99.252 255.255.255.0       up requested or inherited
+GigabitEthernet0/1       unassigned                         up requested or inherited
+GigabitEthernet0/2       unassigned                         up requested or inherited

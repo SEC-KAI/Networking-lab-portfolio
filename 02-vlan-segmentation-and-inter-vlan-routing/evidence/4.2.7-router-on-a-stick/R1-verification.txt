@@ -1,0 +1,21 @@
+R1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+
+R1#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+
+R1#show ip interface brief
+Interface                Configured address                 Administrative expectation
+GigabitEthernet0/0       unassigned                         up requested or inherited
+GigabitEthernet0/0.10    172.17.10.1 255.255.255.0          up requested or inherited
+GigabitEthernet0/0.30    172.17.30.1 255.255.255.0          up requested or inherited
+
+R1#show running-config interface gigabitEthernet0/0.10
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 172.17.10.1 255.255.255.0
+
+R1#show running-config interface gigabitEthernet0/0.30
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 172.17.30.1 255.255.255.0

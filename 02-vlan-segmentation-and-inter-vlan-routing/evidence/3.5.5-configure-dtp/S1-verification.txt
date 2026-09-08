@@ -1,0 +1,25 @@
+S1#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Red                          active   
+20    Blue                         active   
+30    Yellow                       active   
+99    Management                   active   
+999   Native                       active   
+
+S1#show interfaces trunk
+Port                     Mode         Encapsulation  Expected status  Native VLAN
+GigabitEthernet0/1       dynamic desirable 802.1q         trunking*        999
+GigabitEthernet0/2       trunk        802.1q         trunking*        999
+
+S1#show dtp
+GigabitEthernet0/1: enabled (assumed default)
+GigabitEthernet0/2: disabled
+
+S1#show interfaces gigabitEthernet0/2 switchport
+GigabitEthernet0/1
+ switchport mode dynamic desirable
+ switchport trunk native vlan 999
+GigabitEthernet0/2
+ switchport mode trunk
+ switchport nonegotiate
+ switchport trunk native vlan 999

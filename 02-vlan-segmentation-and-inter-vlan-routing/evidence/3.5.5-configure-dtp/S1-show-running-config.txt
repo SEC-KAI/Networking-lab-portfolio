@@ -1,0 +1,31 @@
+S1#show running-config
+hostname S1
+!
+vlan 10
+ name Red
+!
+vlan 20
+ name Blue
+!
+vlan 30
+ name Yellow
+!
+vlan 99
+ name Management
+!
+vlan 999
+ name Native
+!
+interface Vlan99
+ ip address 192.168.99.1 255.255.255.0
+!
+interface GigabitEthernet0/1
+ switchport mode dynamic desirable
+ switchport trunk native vlan 999
+!
+interface GigabitEthernet0/2
+ switchport mode trunk
+ switchport nonegotiate
+ switchport trunk native vlan 999
+!
+end

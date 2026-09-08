@@ -1,0 +1,19 @@
+S1#show running-config
+hostname S1
+!
+vlan 10
+!
+vlan 30
+!
+interface FastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+!
+interface FastEthernet0/6
+ switchport mode access
+ switchport access vlan 30
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+end

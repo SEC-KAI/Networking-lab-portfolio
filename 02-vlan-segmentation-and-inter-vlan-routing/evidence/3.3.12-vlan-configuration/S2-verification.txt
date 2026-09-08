@@ -1,0 +1,18 @@
+S2#show vlan brief
+VLAN  Name                         Status   Known access/voice ports
+10    Faculty/Staff                active   FastEthernet0/11
+20    Students                     active   FastEthernet0/18
+30    Guest(Default)               active   FastEthernet0/6
+99    Management&Native            active   
+150   VOICE                        active   
+
+S2#show interfaces fastEthernet0/11 switchport
+FastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+FastEthernet0/18
+ switchport mode access
+ switchport access vlan 20
+FastEthernet0/6
+ switchport mode access
+ switchport access vlan 30

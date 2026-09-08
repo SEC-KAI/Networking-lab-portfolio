@@ -1,0 +1,33 @@
+S3#show running-config
+hostname S3
+!
+vlan 10
+ name Faculty/Staff
+!
+vlan 20
+ name Students
+!
+vlan 30
+ name Guest(Default)
+!
+vlan 99
+ name Management&Native
+!
+vlan 150
+ name VOICE
+!
+interface FastEthernet0/11
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 150
+ mls qos trust cos
+!
+interface FastEthernet0/18
+ switchport mode access
+ switchport access vlan 20
+!
+interface FastEthernet0/6
+ switchport mode access
+ switchport access vlan 30
+!
+end
